@@ -1,5 +1,5 @@
 #include<iostream>
-#include<string>
+#include<cstring>
 
 using namespace std;
 
@@ -33,9 +33,32 @@ string func3(string x){
 	return y;	
 }
 
-int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
-    return 0;
+int main()
+{
+	char string1[20];
+	int i, length;
+	int a = 0;
+
+	cout << "Input text: ";
+	cin >> string1;
+	cout << "Reversed text: " << func1(string1) << "\n";
+	string string2 = func3(string1);
+
+	length = strlen(string1);
+
+	for (i = 0; i < length; i++)
+	{
+		if (string2[i] != string2[length - i - 1])
+			a = 1;
+		break;
+	}
+
+	if (a)
+	{
+		cout << "Palindrome: No" << "\n";
+	
+	}else{
+		cout << "Palindrome: Yes" << "\n";
+	}
+	return 0;
 }
